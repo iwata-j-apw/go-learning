@@ -2,16 +2,19 @@ package main
 
 import (
 	"fmt"
-	"godemy/internal/vertex"
 )
 
 type Vertex struct {
 	X, Y int
 }
 
+func NewVertex(x, y int) *Vertex {
+	return &Vertex{x, y}
+}
+
 func main() {
-	v := vertex.New(3, 4)
-	fmt.Println(AreaFunc(*v))                     // => 12
+	v := NewVertex(3, 4)
+	fmt.Println(AreaFunc(*v))                    // => 12
 	fmt.Println(v.AreaMethod())                  // => 12
 	fmt.Println(v.ScaleMethod(10).AreaMethod())  // => 1200
 }
